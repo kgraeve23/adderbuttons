@@ -14,10 +14,20 @@ app.get('/', (req, res) => {
 
 // Route for handling POST requests
 app.post('/echo', (req, res) => {
-    // Echo the request body in the response
-    //res.send("post request activated")
-    res.json(req.body);
+    // Extract the age from the request body
+    const age = req.body.age;
+
+    // Check if age is provided and it's a number
+    if (age !== undefined && typeof age === 'number') {
+        // Multiply the age by 2 and send it back in the response
+        const doubledAge = age * 2;
+        res.json({ doubledAge });
+    } else {
+        // If age is not provided or not a number, send an error response
+        res.status(400).json({ error: 'Invalid age provided' });
+    }
 });
+
 
 const PORT = process.env.PORT || 3000;
 
