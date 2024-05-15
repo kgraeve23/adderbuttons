@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 app.post('/echo', (req, res) => {
     // Echo the request body in the response
     //res.send("post request activated")
-    res.json(req.body);
+    res.json(req.body.Age);
 });
 
 const PORT = process.env.PORT || 3000;
