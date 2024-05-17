@@ -11,6 +11,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+app.get('/echo', (req, res) => {
+    res.send("This path is for Post requests")
+});
 
 // Route for handling POST requests
 app.post('/echo', (req, res) => {
