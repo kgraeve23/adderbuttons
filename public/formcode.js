@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     plusButtons.forEach(function(button) {
         button.addEventListener("click", function() {
             var input = this.previousElementSibling;
-            input.value = parseInt(input.value) + 1;
+            input.value = parseInt(input.value) * 2;
         });
     });
 
